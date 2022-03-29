@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const url = 'mongodb://localhost/AlienDBex'
+const url = 'mongodb://localhost:27017/Student'
 
 const app = express()
 
@@ -13,8 +13,8 @@ con.on('open', () => {
 
 app.use(express.json())
 
-const alienRouter = require('./routes/aliens')
-app.use('/aliens',alienRouter)
+const studentRouter = require('./routes/students-routes')
+app.use('/students',studentRouter)
 
 
 app.listen(9000, () => {
